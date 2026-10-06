@@ -2,6 +2,9 @@ package database;
 
 import model.Account;
 
+/**
+ * In-memory storage for account records.
+ */
 public class AccountDataBase {
 
     private static Account account1 = new Account(1234L, 5000L, UserDataBase.getUser1());
@@ -11,6 +14,11 @@ public class AccountDataBase {
     private static Account account5 = new Account(1238L, 25000L, UserDataBase.getUser5());
     private static Account account6 = new Account(1239L, 15000L, UserDataBase.getUser6());
 
+    /**
+     * Returns all stored accounts as an array.
+     *
+     * @return array of accounts
+     */
     private static Account[] accounts = {
             account1, account2, account3, account4, account5, account6
     };

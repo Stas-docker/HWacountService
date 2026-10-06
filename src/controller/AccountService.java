@@ -2,6 +2,9 @@ package controller;
 
 import model.Account;
 
+/**
+ * Service interface for managing and searching bank accounts.
+ */
 public interface AccountService {
     /**
      * It finds an account by owner id

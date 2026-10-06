@@ -2,6 +2,9 @@ package database;
 
 import model.User;
 
+/**
+ * Storage for initial user data.
+ */
 public class UserDataBase {
 
     private static User user1 = new User(1234L, "Petea", "Ivanov");
