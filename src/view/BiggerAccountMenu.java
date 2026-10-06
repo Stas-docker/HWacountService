@@ -1,11 +1,6 @@
 package view;
-
 import controller.AccountService;
-import controller.AccountServiceImpl;
-import database.AccountDataBase;
-import model.Account;
 import utils.Utils;
-
 import java.util.Scanner;
 
 /**
@@ -26,7 +21,9 @@ public class BiggerAccountMenu {
         System.out.println("\nAccounts that contain more money than you've just mentioned are: " + number);
     }
 
-    /** Displays menu header instructions. */
+    /**
+     * Displays menu header instructions.
+     */
     private static void showMenu() {
         System.out.println("\nFind the quantity of accounts where balance is greater than you has typed.");
         System.out.println("Write the amount: ");

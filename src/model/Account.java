@@ -22,17 +22,23 @@ public class Account {
         this.owner = owner;
     }
 
-    /** @return account ID */
+    /**
+     * @return account ID
+     */
     public long getId() {
         return id;
     }
 
-    /** @return account balance */
+    /**
+     * @return account balance
+     */
     public long getBalance() {
         return balance;
     }
 
-    /** @return account owner */
+    /**
+     * @return account owner
+     */
     public User getOwner() {
         return owner;
     }

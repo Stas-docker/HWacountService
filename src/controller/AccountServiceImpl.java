@@ -17,7 +17,9 @@ public class AccountServiceImpl implements AccountService {
         this.accounts = accounts;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Account findAccountByOwnerId(final long id) {
         Account foundAccount = null;
@@ -30,7 +32,9 @@ public class AccountServiceImpl implements AccountService {
         return foundAccount;
     }
 
-    /** {@inheritDoc} */
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public long countAccountsWithBalanceGreaterThan(final long balance) {
         long numberOfAccounts = 0;

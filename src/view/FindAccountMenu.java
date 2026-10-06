@@ -1,11 +1,8 @@
 package view;
-
 import controller.AccountService;
-import controller.AccountServiceImpl;
 import database.AccountDataBase;
 import model.Account;
 import utils.Utils;
-
 import java.util.Scanner;
 
 /**

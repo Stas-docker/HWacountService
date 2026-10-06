@@ -14,10 +14,27 @@ public class UserDataBase {
     private static User user5 = new User(1238L, "Dmitry", "Popov");
     private static User user6 = new User(1239L, "Olga", "Vasilieva");
 
-    public static User getUser1() { return user1; }
-    public static User getUser2() { return user2; }
-    public static User getUser3() { return user3; }
-    public static User getUser4() { return user4; }
-    public static User getUser5() { return user5; }
-    public static User getUser6() { return user6; }
+    public static User getUser1() {
+        return user1;
+    }
+
+    public static User getUser2() {
+        return user2;
+    }
+
+    public static User getUser3() {
+        return user3;
+    }
+
+    public static User getUser4() {
+        return user4;
+    }
+
+    public static User getUser5() {
+        return user5;
+    }
+
+    public static User getUser6() {
+        return user6;
+    }
 }

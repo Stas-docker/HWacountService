@@ -22,17 +22,23 @@ public class User {
         this.lastName = lastName;
     }
 
-    /** @return user ID */
+    /**
+     * @return user ID
+     */
     public long getId() {
         return id;
     }
 
-    /** @return user first name */
+    /**
+     * @return user first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    /** @return user last name */
+    /**
+     * @return user last name
+     */
     public String getLastName() {
         return lastName;
     }
