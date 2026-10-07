@@ -1,5 +1,9 @@
 package model;
 
+import utils.Utils;
+
+import java.util.regex.Matcher;
+
 /**
  * Represents a user in the system.
  */
@@ -17,8 +21,11 @@ public class User {
      * @param lastName  user last name
      */
     public User(long id, String firstName, String lastName) {
+        Utils.validateIdUniqueness(id);
         this.id = id;
+        Utils.validateStringInput(firstName);
         this.firstName = firstName;
+        Utils.validateStringInput(lastName);
         this.lastName = lastName;
     }
 
@@ -42,4 +49,6 @@ public class User {
     public String getLastName() {
         return lastName;
     }
+
+
 }

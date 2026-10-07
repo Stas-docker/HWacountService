@@ -14,6 +14,10 @@ public class UserDataBase {
     private static User user5 = new User(1238L, "Dmitry", "Popov");
     private static User user6 = new User(1239L, "Olga", "Vasilieva");
 
+    private static User[] users = {
+            user1, user2, user3, user4, user5, user6
+    };
+
     public static User getUser1() {
         return user1;
     }
@@ -36,5 +40,9 @@ public class UserDataBase {
 
     public static User getUser6() {
         return user6;
+    }
+
+    public static User[] getUsers() {
+        return users;
     }
 }
