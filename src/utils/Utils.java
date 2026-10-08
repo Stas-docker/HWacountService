@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  * Helper class for console input validation and parsing.
  */
 public class Utils {
-    private static final Pattern pattern = Pattern.compile("\\d");
+    static User[] users = UserDataBase.getUsers();
 
     /**
      * Reads a valid long value from the console.
@@ -47,6 +47,8 @@ public class Utils {
      * @throws IllegalArgumentException if string is null, blank, or contains digits
      */
     public static void validateStringInput(String string) {
+        final Pattern pattern = Pattern.compile("\\d");
+
         if (string.isBlank()) {
             throw new IllegalArgumentException("Cannot be null or empty.");
         }
@@ -64,16 +66,57 @@ public class Utils {
      * @throws IllegalArgumentException if a user with this ID already exists
      */
     public static void validateIdUniqueness(long id) {
-        User[] users = UserDataBase.getUsers();
+        if (users != null) {
 
-        if (users == null) {
-            return;
-        }
-
-        for (User user : UserDataBase.getUsers()) {
-            if (user != null && user.getId() == id) {
-                throw new IllegalArgumentException("User with ID " + id + " already exists");
+            for (User user : UserDataBase.getUsers()) {
+                if (user != null && user.getId() == id) {
+                    throw new IllegalArgumentException("User with ID " + id + " already exists");
+                }
             }
+
+        }
+    }
+
+    /**
+     * Validates that the account ID matches the owner's user ID.
+     *
+     * @param id the account ID
+     * @param owner the user who owns the account
+     * @throws IllegalArgumentException if the IDs do not match
+     */
+    public static void validateIdAffiliation(long id, User owner) {
+        if (id != owner.getId()) {
+            throw new IllegalArgumentException("Account ID must match the owner's User ID.");
+        }
+    }
+
+    /**
+     * Validates that the initial balance is not negative.
+     *
+     * @param balance the account balance to check
+     * @throws IllegalArgumentException if the balance is less than zero
+     */
+    public static void validateBalanceEssentiality(long balance) {
+        if (balance < 0) {
+            throw new IllegalArgumentException("Initial balance cannot be negative.");
+        }
+    }
+
+    /**
+     * Validates that a user with the given ID exists in the database.
+     *
+     * @param id the user ID to check
+     * @throws IllegalArgumentException if no user with this ID is found
+     */
+    public static void validateUserExistence(long id) {
+        if (users != null) {
+            for (User user : users) {
+                if (user.getId() == id) {
+                    return;
+                }
+            }
+
+            throw new IllegalArgumentException("There's no user like that in data base");
         }
     }
 }
